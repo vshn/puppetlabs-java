@@ -35,6 +35,22 @@ class java(
 
     }
 
+    'Darwin': {
+
+      $distribution_darwin = $distribution ? {
+        jdk => 'openjdk6',
+        jre => 'openjdk6',
+      }
+
+      class { 'java::package_darwin':
+        version      => $version,
+        distribution => $distribution_darwin,
+        require      => Anchor['java::begin'],
+        before       => Anchor['java::end'],
+      }
+
+    }
+
     'Debian': {
 
       case $::lsbdistcodename {
