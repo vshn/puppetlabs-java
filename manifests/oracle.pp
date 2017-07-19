@@ -93,21 +93,25 @@ define java::oracle (
       $release_major = '6u45'
       $release_minor = 'b06'
       $install_path = "${java_se}1.6.0_45"
+      $release_hash = undef
     }
     '7' : {
       $release_major = '7u80'
       $release_minor = 'b15'
       $install_path = "${java_se}1.7.0_80"
+      $release_hash = undef
     }
     '8' : {
       $release_major = '8u141'
       $release_minor = 'b15'
       $install_path = "${java_se}1.8.0_141"
+      $release_hash = '336fa29ff2bb4ef291e347e091f7f4a7'
     }
     default : {
       $release_major = '8u141'
       $release_minor = 'b15'
       $install_path = "${java_se}1.8.0_141"
+      $release_hash = '336fa29ff2bb4ef291e347e091f7f4a7'
     }
   }
 
@@ -166,6 +170,16 @@ define java::oracle (
     }
   }
 
+  if $url {
+    $source = $url
+  }
+  elsif $release_hash != undef {
+    $source = "${oracle_url}/${release_major}-${release_minor}/${release_hash}/${package_name}"
+  }
+  else {
+    $source = "${oracle_url}/${release_major}-${release_minor}/${package_name}"
+  }
+
   # full path to the installer
   $destination = "${destination_dir}${package_name}"
   notice ("Destination is ${destination}")
@@ -189,7 +203,7 @@ define java::oracle (
     'present' : {
       archive { $destination :
         ensure       => present,
-        source       => "${oracle_url}${release_major}-${release_minor}/${package_name}",
+        source       => $source,
         cleanup      => false,
         extract_path => '/tmp',
         cookie       => 'gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie',
