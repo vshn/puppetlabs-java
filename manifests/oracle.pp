@@ -102,7 +102,6 @@ define java::oracle (
       $release_hash = undef
     }
     '8' : {
-      http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.rpm
       $release_major = '8u144'
       $release_minor = 'b01'
       $install_path = "${java_se}1.8.0_144"
