@@ -102,16 +102,17 @@ define java::oracle (
       $release_hash = undef
     }
     '8' : {
-      $release_major = '8u141'
-      $release_minor = 'b15'
-      $install_path = "${java_se}1.8.0_141"
-      $release_hash = '336fa29ff2bb4ef291e347e091f7f4a7'
+      http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.rpm
+      $release_major = '8u144'
+      $release_minor = 'b01'
+      $install_path = "${java_se}1.8.0_144"
+      $release_hash = '8u144-b01/090f390dda5b47b9b721c7dfaa008135'
     }
     default : {
-      $release_major = '8u141'
-      $release_minor = 'b15'
-      $install_path = "${java_se}1.8.0_141"
-      $release_hash = '336fa29ff2bb4ef291e347e091f7f4a7'
+      $release_major = '8u144'
+      $release_minor = 'b01'
+      $install_path = "${java_se}1.8.0_144"
+      $release_hash = '8u144-b01/090f390dda5b47b9b721c7dfaa008135'
     }
   }
 
