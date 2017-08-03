@@ -105,13 +105,13 @@ define java::oracle (
       $release_major = '8u144'
       $release_minor = 'b01'
       $install_path = "${java_se}1.8.0_144"
-      $release_hash = '8u144-b01/090f390dda5b47b9b721c7dfaa008135'
+      $release_hash = '090f390dda5b47b9b721c7dfaa008135'
     }
     default : {
       $release_major = '8u144'
       $release_minor = 'b01'
       $install_path = "${java_se}1.8.0_144"
-      $release_hash = '8u144-b01/090f390dda5b47b9b721c7dfaa008135'
+      $release_hash = '090f390dda5b47b9b721c7dfaa008135'
     }
   }
 
