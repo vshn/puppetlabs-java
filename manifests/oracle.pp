@@ -141,10 +141,10 @@ define java::oracle (
         $release_hash  = undef
       }
       '8' : {
-        $release_major = '8u131'
-        $release_minor = 'b11'
-        $install_path = "${java_se}1.8.0_131"
-        $release_hash  = 'd54c1d3a095b4ff2b6607d096fa80163'
+        $release_major = '8u152'
+        $release_minor = 'b16'
+        $install_path = "${java_se}1.8.0_152"
+        $release_hash  = 'aa0333dd3019491ca4f6ddbe78cdb6d0'
       }
       default : {
         $release_major = '8u131'
